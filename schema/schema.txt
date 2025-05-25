@@ -1,0 +1,80 @@
+
+
+// Untuk Column answers pada table peserta di database
+{
+       "pesertaId" : "123-123",
+      "data" : [
+        {
+          "question": {"id" :  "question01" ,"answer" : "A"}
+          },
+        {
+          "question": {"id" :  "question02" ,"answer" : "C"}
+        },
+        {
+          "question": {"id" :  "question03" ,"answer" : "B"}
+        }
+      ]
+}
+
+/api/v1/login => response {
+    "token":"adsfijasfijdsaifdsaf"
+}
+
+/api/v1/quiz/answer => POST
+header : Authorization => `Bearer adsfijasfijdsaifdsaf`
+body :{
+    "answer",
+    "questionId"
+}
+
+/api/v1/quiz/answers => GET
+
+// schema table soal
+{
+    "id" : "int",
+    "kode_soal":"string",
+    "waktu":"int",
+    "questions":"json"
+}
+
+
+// schema json pada table soal column questions
+
+[
+{
+    "questionId":"123-123",
+    "pertanyaan" : {
+        "text": "Apa Ibu Kota Negara Jerman?",
+        "gambar" : "null"
+    },
+    "answer" : {
+        "text":{
+            "A" : "Jakarta",
+             "B" : "Delhi",
+             "C" : "Berlin",
+              "D" : "Amsterdam"
+        }
+    },
+    "correct_answer" : {
+        "key" : "C",
+        "text" : "Berlin"
+    }
+},
+{
+    "questionId":"123-123",
+    "pertanyaan" : {
+        "text": "Apa Ibu kota indonesia ?",
+        "gambar" : "null"
+    },
+    "answer" : {
+        "A" : "Jakarta",
+        "B" : "Delhi",
+        "C" : "Berlin",
+        "D" : "Amsterdam"
+    },
+    "correct_answer" : {
+        "key" : "A",
+        "text" : "Jakarta"
+    }
+}
+]
